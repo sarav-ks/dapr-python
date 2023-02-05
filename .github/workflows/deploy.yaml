@@ -11,6 +11,8 @@ on:
 jobs:
   Deploy:
     runs-on: ubuntu-latest
+    env:
+      IMG_NAME: 'dapr-python-bp'
     permissions:
       contents: read
       packages: write
@@ -37,3 +39,7 @@ jobs:
           push: true # Will only build if this is not here
           tags: |
             ghcr.io/${{ github.repository }}:latest
+      - name: Pack Remote Build
+        uses: dfreilich/pack-action@v2
+        with:
+          args: 'build ${{ env.IMG_NAME }} --builder paketobuildpacks/builder:full --publish'            
