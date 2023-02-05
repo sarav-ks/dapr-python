@@ -12,7 +12,7 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     env:
-      IMG_NAME: 'dapr-python-bp'
+      IMG_NAME: 'ghcr.io/sarav-ks/dapr-python-bpack:latest'
     permissions:
       contents: read
       packages: write
