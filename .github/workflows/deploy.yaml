@@ -40,6 +40,6 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}:latest
       - name: Pack Remote Build
-        uses: dfreilich/pack-action@v2
+        uses: dfreilich/pack-action@v2.1.1
         with:
           args: 'build ${{ env.IMG_NAME }} --builder paketobuildpacks/builder:full --publish'            
